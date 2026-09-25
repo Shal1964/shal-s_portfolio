@@ -42,7 +42,7 @@ function AboutPostcard() {
       <svg
         viewBox="0 0 220 180"
         aria-hidden="true"
-        className="pointer-events-none absolute -top-9 right-1 z-0 hidden w-36 min-[480px]:block sm:-top-12 sm:right-4 sm:w-48"
+        className="pointer-events-none absolute -top-9 right-1 z-30 hidden w-36 min-[480px]:block sm:-top-12 sm:right-4 sm:w-48"
       >
         <path
           d="M 30,100 C 25,60 55,30 80,45 C 95,54 90,75 68,72 C 52,70 50,52 68,48 C 100,40 135,55 138,85 C 140,108 118,120 100,110 C 88,103 92,88 110,86 C 145,82 175,100 185,130 C 190,145 185,158 175,160"
@@ -66,7 +66,7 @@ function AboutPostcard() {
         <svg
           viewBox="0 0 220 180"
           aria-hidden="true"
-          className="pointer-events-none absolute -top-6 -left-16 hidden w-56 min-[480px]:block sm:-top-10 sm:-left-24 sm:w-72"
+          className="pointer-events-none absolute -top-6 -left-16 z-30 hidden w-56 min-[480px]:block sm:-top-10 sm:-left-24 sm:w-72"
         >
           <path
             d="M 190,100 C 195,60 165,30 140,45 C 125,54 130,75 152,72 C 168,70 170,52 152,48 C 120,40 85,55 82,85 C 80,108 102,120 120,110 C 132,103 128,88 110,86 C 75,82 45,100 35,130 C 30,145 35,158 45,160"
