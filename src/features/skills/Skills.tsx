@@ -22,6 +22,7 @@ import {
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 import { FaJava } from "react-icons/fa";
+import canvaLogo from "../../assets/canva.png";
 
 const CATEGORY_ACCENTS = ["#D1ACCE", "#FCEEA8"];
 
@@ -101,7 +102,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Git & GitHub", icon: SiGithub, color: "#181717" },
       { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "Canva", image: "/src/assets/canva.png"},
+      { name: "Canva", image: canvaLogo },
       { name: "Electron", icon: SiElectron, color: "#47848F" },
     ],
   },
