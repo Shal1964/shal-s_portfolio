@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jua: "Jua", sans-serif;
+  --font-gaegu: "Gaegu", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 68px;
+}

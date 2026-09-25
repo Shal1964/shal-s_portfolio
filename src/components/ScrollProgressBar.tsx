@@ -1,0 +1,20 @@
+import { motion, useScroll, useSpring } from "framer-motion";
+
+function ScrollProgressBar() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+    mass: 0.2,
+  });
+
+  return (
+    <motion.div
+      aria-hidden="true"
+      style={{ scaleX }}
+      className="fixed inset-x-0 top-0 z-[60] h-1 origin-left bg-[#000097]"
+    />
+  );
+}
+
+export default ScrollProgressBar;
