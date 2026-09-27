@@ -68,14 +68,14 @@ function Experience() {
     <motion.section
       ref={sectionRef}
       id="experience"
-      className="relative flex min-h-screen flex-col justify-center bg-[#EEF8FF] px-6 py-16"
+      className="relative flex h-screen flex-col overflow-hidden bg-[#EEF8FF] px-6 pb-6 pt-8"
       style={{ opacity: sectionOpacity, y: sectionY }}
     >
-      <h2 className="text-center font-jua text-4xl text-[#000097]">
+      <h2 className="shrink-0 text-center font-jua text-3xl text-[#000097] sm:text-4xl">
         Experience
       </h2>
 
-      <div className="relative mx-auto mt-10 w-[92vw] max-w-6xl md:flex md:items-start">
+      <div className="relative mx-auto mt-10 flex min-h-0 w-[80vw] max-w-[60rem] flex-1 flex-col md:flex-row md:items-stretch">
         <ChapterTabs
           chapters={experienceChapters}
           activeChapter={activeChapterId}
@@ -87,7 +87,7 @@ function Experience() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={bookVariants}
-          className="relative overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_rgba(0,0,151,0.25)] md:order-1 md:h-[75vh] md:min-w-0 md:flex-1 md:grid md:grid-cols-2"
+          className="relative min-h-0 max-h-[70vh] flex-1 overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_rgba(0,0,151,0.25)] md:order-1 md:min-w-0 md:max-h-[70vh] md:grid md:grid-cols-2"
           style={{ perspective: 1600 }}
         >
           <span
@@ -138,7 +138,7 @@ function Experience() {
           </div>
 
           <div
-            className="relative overflow-y-auto p-6 sm:p-8"
+            className="relative h-full overflow-y-auto p-4 sm:p-6"
             style={{ transformStyle: "preserve-3d" }}
           >
             <AnimatePresence mode="wait" custom={direction}>
@@ -156,20 +156,20 @@ function Experience() {
                 transition={{ duration: 0.45, ease: "easeInOut" }}
                 style={{ transformOrigin: "left center" }}
               >
-                <div className="mb-6 flex items-center gap-3">
+                <div className="mb-3 flex items-center gap-3">
                   <span
                     aria-hidden="true"
-                    className="flex h-10 w-10 items-center justify-center rounded-full text-white"
+                    className="flex h-8 w-8 items-center justify-center rounded-full text-white"
                     style={{ backgroundColor: activeChapter.bookmarkColor }}
                   >
-                    <activeChapter.icon size={18} />
+                    <activeChapter.icon size={16} />
                   </span>
-                  <h3 className="font-jua text-2xl text-[#000097]">
+                  <h3 className="font-jua text-lg text-[#000097]">
                     {activeChapter.label}
                   </h3>
                 </div>
 
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
                   {activeChapter.entries.map((entry, index) => (
                     <motion.div
                       key={entry.id}

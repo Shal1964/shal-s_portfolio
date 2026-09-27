@@ -71,7 +71,6 @@ export const projects: Project[] = [
       "Honkai Star Retail is a mobile application for browsing and purchasing Honkai: Star Rail-themed items, including Galactic Resources and Light Cones, developed as a project for my university's Mobile Hybrid Solution course based on a given case study/theme (Galactic Resources and Light Cones e-commerce).The app supports two roles: Users, who can browse the item catalog, search for specific items, view detailed information (name, type, description, stock, image, and price), and purchase multiple items in a single transaction based on available stock; and Admins, who manage the entire catalog through full CRUD functionality : adding new items, updating item details, adjusting stock levels, and removing items.The app also includes a Light/Dark mode toggle, letting users customize the interface to their preference.",
     techStack: ["React", "TypeScript", "dnd-kit"],
     thumbnail: retailThumb,
-    // TODO: retail-detail.png is missing from src/assets/projects — add the file, then convert to an import
     detail: "/src/assets/projects/retail-detail.png",
     githubUrl: "",
     type: "team",
@@ -84,7 +83,6 @@ export const projects: Project[] = [
       "Re-Fashion is a sustainability analysis tool for the fashion industry, built as a semester 3 university project with a focus on functional depth and data-driven logic rather than visual design. The system uses a hybrid ML + LLM architecture: a Gradient Boosting Regression model calculates the Eco Score from structured sustainability indicators (carbon emissions, water usage, labor metrics, and more), while an LLM acts as an intelligent interface, letting users describe their product or brand in natural language, extracting the relevant parameters, and translating the numerical results into clear explanations and recommendations. The app includes an Eco Score Calculator, a Product Sustainability Advisor with material recommendations, a Fast Fashion Impact Awareness section, a Conscious Shopping Assistant, and a chatbot for follow-up questions.",
     techStack: ["Python", "OpenAI API"],
     thumbnail: refashionThumb,
-    // TODO: refashion-detail.png is missing from src/assets/projects — add the file, then convert to an import
     detail: "/src/assets/projects/refashion-detail.png",
     githubUrl: "",
     type: "team",

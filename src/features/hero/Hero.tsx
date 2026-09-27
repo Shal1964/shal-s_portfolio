@@ -10,7 +10,7 @@ function Hero(){
     const sectionRef = useRef<HTMLElement>(null);
 
     return(
-       <section ref={sectionRef} id="home" className="relative min-h-screen overflow-hidden bg-[#EEF8FF] flex items-center justify-center">
+       <section ref={sectionRef} id="home" className="relative min-h-screen [overflow:clip] bg-[#EEF8FF] flex items-center justify-center">
         <div className="absolute inset-0">
           <HeroBackground />
         </div>

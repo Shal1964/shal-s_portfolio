@@ -56,18 +56,18 @@ function ExperienceEntryCard({ entry, accentColor, onClick }: ExperienceEntryCar
         ) : null}
 
         <div className="min-w-0">
-          <h4 className="font-jua text-lg text-[#000097]">{entry.title}</h4>
-          <p className="text-sm font-semibold text-black/70">{entry.org}</p>
+          <h4 className="font-jua text-base text-[#000097]">{entry.title}</h4>
+          <p className="text-xs font-semibold text-black/70">{entry.org}</p>
           {entry.location && (
-            <p className="mt-0.5 text-xs text-black/50">{entry.location}</p>
+            <p className="mt-0.5 text-[11px] text-black/50">{entry.location}</p>
           )}
-          <p className="mt-0.5 text-xs uppercase tracking-wide text-black/45">
+          <p className="mt-0.5 text-[11px] uppercase tracking-wide text-black/45">
             {entry.dateRange}
           </p>
         </div>
       </div>
 
-      <ul className="mt-3 list-disc space-y-1 pl-4 text-sm leading-relaxed text-black/70">
+      <ul className="mt-3 list-disc space-y-1 pl-4 text-xs leading-relaxed text-black/70">
         {entry.description.map((point) => (
           <li key={point}>{point}</li>
         ))}

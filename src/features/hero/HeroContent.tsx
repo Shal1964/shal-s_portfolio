@@ -16,10 +16,16 @@ function HeroContent() {
 
           }}></Typewriter>
         </div>
-        <h1 className="text-center text-7xl font-jua text-[#000097] top-4">
+        <h1
+          className="text-center font-jua text-[#000097] top-4"
+          style={{ fontSize: "clamp(2rem, 5vw + 1rem, 3.75rem)", lineHeight: 1 }}
+        >
           I'm Shally Liusiana
         </h1>
-        <p className="text-center text-4xl font-jua text-[#000097]/80 mt-4">
+        <p
+          className="text-center font-jua text-[#000097]/80 mt-4"
+          style={{ fontSize: "clamp(1.25rem, 2.5vw + 0.5rem, 2.25rem)", lineHeight: 1.1 }}
+        >
           Computer Science Student @BINUS University
         </p>
       </div>
@@ -27,7 +33,7 @@ function HeroContent() {
       <img
         src={character}
         alt="character illustration"
-        className="absolute z-10 bottom-32 left-1/2 -translate-x-1/2 w-[260px] sm:w-[340px] lg:w-[450px]"
+        className="absolute z-10 bottom-32 left-1/2 -translate-x-1/2 w-[200px] sm:w-[260px] lg:w-[340px]"
       />
     </>
   );

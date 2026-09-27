@@ -10,47 +10,29 @@ function AboutMe() {
   });
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  const handleCtaClick = () => {
-    document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <motion.section
       ref={sectionRef}
       id="about"
-      className="relative overflow-hidden bg-[#EEF8FF] pb-20 sm:pb-28"
+      className="relative isolate z-10 flex min-h-screen flex-col bg-[#EEF8FF]"
       style={{ opacity }}
     >
-      <div className="relative h-64">
+      <div className="relative h-40 shrink-0 sm:h-56">
         <svg
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
           aria-hidden="true"
           className="absolute inset-0 h-full w-full"
         >
-          <path fill="#5BA3C4" d="M0,0 L1440,0 L1440,220 C1080,320 360,120 0,220 Z" />
+          <path fill="#2EAACC" d="M0,0 L1440,0 L1440,180 C1080,260 900,140 720,180 C540,220 360,100 180,160 C90,190 40,180 0,190 Z" />
         </svg>
-        <h2 className="relative z-10 pt-16 text-center font-jua text-4xl text-white">
+        <h2 className="absolute inset-x-0 top-[35%] z-10 -translate-y-1/2 text-center font-jua text-2xl text-white sm:text-3xl">
           About Me
         </h2>
       </div>
 
-      <div className="relative mx-auto max-w-5xl px-6 pt-6 sm:pt-10">
+      <div className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-6 py-6">
         <AboutPostcard />
-
-        <div className="mt-12 flex justify-center sm:mt-16">
-          <motion.button
-            type="button"
-            onClick={handleCtaClick}
-            initial={{ rotate: -2 }}
-            whileHover={{ rotate: 0, y: -6, scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 300, damping: 18 }}
-            className="rounded-xl bg-white px-6 py-3 font-jua text-lg text-[#000097] shadow-[0_0_0_5px_white,0_8px_18px_rgba(0,0,151,0.2)]"
-          >
-            See what I work with →
-          </motion.button>
-        </div>
       </div>
     </motion.section>
   );

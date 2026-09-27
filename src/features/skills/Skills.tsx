@@ -140,19 +140,19 @@ function SkillSticker({ name, icon: Icon, image, color, accent, index }: SkillSt
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative z-0 flex w-28 shrink-0 cursor-default flex-col items-center gap-2 rounded-2xl bg-white px-3 py-4"
+      className="relative z-0 flex w-20 shrink-0 cursor-default flex-col items-center gap-1 rounded-2xl bg-white px-2 py-2"
     >
       <span
-        className="flex h-12 w-12 items-center justify-center rounded-full"
+        className="flex h-9 w-9 items-center justify-center rounded-full"
         style={{ backgroundColor: hexToRgba(accent, 0.15) }}
       >
         {image ? (
-          <img src={image} alt={name} className="h-7 w-7 object-contain" />
+          <img src={image} alt={name} className="h-5 w-5 object-contain" />
         ) : Icon ? (
-          <Icon size={26} color={color} />
+          <Icon size={18} color={color} />
         ) : null}
       </span>
-      <span className="text-center text-sm font-semibold leading-tight text-[#000097]">
+      <span className="text-center text-xs font-semibold leading-tight text-[#000097]">
         {name}
       </span>
     </motion.div>
@@ -167,14 +167,14 @@ type SkillCategorySectionProps = {
 
 function SkillCategorySection({ title, skills, accent }: SkillCategorySectionProps) {
   return (
-    <div className="w-full">
+    <div className="w-full pl-10 sm:pl-16">
       <h3
-        className="mb-5 text-center font-jua text-2xl sm:text-left"
+        className="mb-2 text-left font-jua text-lg"
         style={{ color: rgbToCss(darken(accent, 0.45)) }}
       >
         {title}
       </h3>
-      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-7 sm:justify-start">
+      <div className="flex flex-wrap items-center justify-start gap-x-3 gap-y-3">
         {skills.map((skill, index) => (
           <SkillSticker
             key={skill.name}
@@ -204,14 +204,14 @@ function Skills() {
     <motion.section
       ref={sectionRef}
       id="skills"
-      className="relative flex min-h-screen flex-col justify-center bg-[#EEF8FF] px-6 py-12"
+      className="relative flex h-screen flex-col justify-center overflow-hidden bg-[#EEF8FF] px-6 py-6"
       style={{ opacity, y }}
     >
-      <h2 className="text-center font-jua text-5xl text-[#000097]">
+      <h2 className="text-center font-jua text-3xl text-[#000097] sm:text-4xl">
         Skills
       </h2>
 
-      <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-x-20 gap-y-12 sm:grid-cols-2">
+      <div className="mx-auto mt-6 grid w-full max-w-6xl grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
         {skillCategories.map((category, index) => (
           <div key={category.title} className={category.fullWidth ? "sm:col-span-2" : undefined}>
             <SkillCategorySection
