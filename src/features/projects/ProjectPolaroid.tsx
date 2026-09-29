@@ -1,7 +1,11 @@
 import type { KeyboardEvent } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import WashiTape from "../../components/WashiTape";
 import type { ProjectType } from "./ProjectsData";
+
+const PROJECT_STAGGER = 0.13;
+const POLAROID_SPRING_ESTIMATE = 0.45;
+const TAPE_DELAY_AFTER_SETTLE = 0.18;
 
 type ProjectPolaroidProps = {
   title: string;
@@ -11,7 +15,46 @@ type ProjectPolaroidProps = {
   webUrl?: string;
   type: ProjectType;
   onClick: () => void;
+  entranceIndex: number;
 };
+
+function getPolaroidVariants(rotation: number, entranceIndex: number, shouldReduceMotion: boolean): Variants {
+  if (shouldReduceMotion) {
+    return {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, rotate: rotation, transition: { duration: 0.2, delay: entranceIndex * 0.04 } },
+    };
+  }
+
+  const overshootRotation = rotation >= 0 ? rotation + 4 : rotation - 4;
+
+  return {
+    hidden: { opacity: 0, y: -35, scale: 1.15, rotate: overshootRotation },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotate: rotation,
+      transition: { type: "spring", stiffness: 300, damping: 15, delay: entranceIndex * PROJECT_STAGGER },
+    },
+  };
+}
+
+function getTapeVariants(entranceIndex: number, shouldReduceMotion: boolean): Variants {
+  if (shouldReduceMotion) {
+    return {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { duration: 0.2, delay: entranceIndex * 0.04 } },
+    };
+  }
+
+  const tapeDelay = entranceIndex * PROJECT_STAGGER + POLAROID_SPRING_ESTIMATE + TAPE_DELAY_AFTER_SETTLE;
+
+  return {
+    hidden: { opacity: 0, scale: 1.3 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.22, ease: "easeOut", delay: tapeDelay } },
+  };
+}
 
 function ProjectPolaroid({
   title,
@@ -21,7 +64,9 @@ function ProjectPolaroid({
   webUrl,
   type,
   onClick,
+  entranceIndex,
 }: ProjectPolaroidProps) {
+  const shouldReduceMotion = useReducedMotion();
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -29,18 +74,29 @@ function ProjectPolaroid({
     }
   };
 
+  const restingRotation = 0;
+
   return (
     <motion.div
       role="button"
       tabIndex={0}
       onClick={onClick}
       onKeyDown={handleKeyDown}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={getPolaroidVariants(restingRotation, entranceIndex, !!shouldReduceMotion)}
       whileHover={{ scale: 1.06, y: -10, zIndex: 30 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 260, damping: 18 }}
       className="relative z-10 mx-auto w-full max-w-sm cursor-pointer rounded-md bg-white p-4 pb-10 text-left shadow-lg outline-none hover:shadow-2xl"
     >
-      <WashiTape color="blue" rotate={0} className="absolute -top-6 left-1/2 -translate-x-1/2" />
+      <motion.div
+        variants={getTapeVariants(entranceIndex, !!shouldReduceMotion)}
+        className="absolute -top-6 left-1/2 -translate-x-1/2"
+      >
+        <WashiTape color="blue" rotate={0} />
+      </motion.div>
 
       <img
         src={thumbnail}

@@ -19,7 +19,7 @@ function Hero(){
         <FlowerCluster side="right" />
         <HeroContent />
 
-        {stickyNotes.map((note) => (
+        {stickyNotes.map((note, index) => (
         <StickyNote
           key={note.targetId}
           label={note.label}
@@ -28,6 +28,7 @@ function Hero(){
           tapeColor={note.tapeColor}
           positionClass={note.positionClass}
           rotation={note.rotation}
+          entranceIndex={index}
         />
       ))}
 

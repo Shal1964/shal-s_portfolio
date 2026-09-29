@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import ProjectPolaroid from "./ProjectPolaroid";
 import ProjectModal from "./ProjectModal";
-import Reveal from "../../components/Reveal";
 import { projects, type Project } from "./ProjectsData";
 
 function Projects() {
@@ -31,17 +30,17 @@ function Projects() {
 
       <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-x-12 gap-y-28 pt-4 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project, index) => (
-          <Reveal key={project.id} delay={index * 0.05}>
-            <ProjectPolaroid
-              title={project.title}
-              tagline={project.tagline}
-              thumbnail={project.thumbnail}
-              githubUrl={project.githubUrl}
-              webUrl={project.webUrl}
-              type={project.type}
-              onClick={() => setSelectedProject(project)}
-            />
-          </Reveal>
+          <ProjectPolaroid
+            key={project.id}
+            title={project.title}
+            tagline={project.tagline}
+            thumbnail={project.thumbnail}
+            githubUrl={project.githubUrl}
+            webUrl={project.webUrl}
+            type={project.type}
+            onClick={() => setSelectedProject(project)}
+            entranceIndex={index}
+          />
         ))}
       </div>
 

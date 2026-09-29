@@ -128,7 +128,7 @@ function SkillSticker({ name, icon: Icon, image, color, accent, index }: SkillSt
     <motion.div
       initial={{ opacity: 0, scale: 0.5, y: scatter.offsetY + 28 }}
       whileInView={{ opacity: 1, scale: 1, y: scatter.offsetY }}
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: false, amount: 0.3 }}
       whileHover={{ scale: 1.08, y: scatter.offsetY - 4, zIndex: 20 }}
       transition={{ type: "spring", stiffness: 300, damping: 16, delay: Math.min(index * 0.06, 0.4) }}
       style={{
