@@ -26,7 +26,7 @@ function AboutMe() {
         >
           <path fill="#2EAACC" d="M0,0 L1440,0 L1440,180 C1080,260 900,140 720,180 C540,220 360,100 180,160 C90,190 40,180 0,190 Z" />
         </svg>
-        <h2 className="absolute inset-x-0 top-[35%] z-10 -translate-y-1/2 text-center font-jua text-2xl text-white sm:text-3xl">
+        <h2 className="absolute inset-x-0 top-[28%] z-10 -translate-y-1/2 text-center font-jua text-2xl text-white sm:text-3xl">
           About Me
         </h2>
       </div>
