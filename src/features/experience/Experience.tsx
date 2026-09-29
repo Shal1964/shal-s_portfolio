@@ -85,7 +85,7 @@ function Experience() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           variants={bookVariants}
           className="relative min-h-0 max-h-[70vh] flex-1 overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_rgba(0,0,151,0.25)] md:order-1 md:min-w-0 md:max-h-[70vh] md:grid md:grid-cols-2"
           style={{ perspective: 1600 }}
