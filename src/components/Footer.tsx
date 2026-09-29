@@ -35,8 +35,8 @@ const reducedItemVariants: Variants = {
 const EMAIL = "shallyliusiana@gmail.com";
 const LINKEDIN_URL = "https://www.linkedin.com/in/shallyliusiana";
 const GITHUB_URL = "https://github.com/Shal1964";
-const CV_URL = "/src/assets/ShallyLiusiana_CV.pdf";
-const PORTFOLIO_URL = "/src/assets/ShallyLiusiana_Portfolio.pdf";
+const CV_URL = "/ShallyLiusiana_CV.pdf";
+const PORTFOLIO_URL = "/ShallyLiusiana_Portfolio.pdf";
 
 const NAV_LINKS = [
   { label: "Home", targetId: "home" },
