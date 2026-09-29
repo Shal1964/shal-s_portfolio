@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { IconType } from "react-icons";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import FlowerCluster from "../features/hero/FlowerCluster";
 import {
   FaCheck,
@@ -11,11 +12,31 @@ import {
   FaRegFolderOpen,
 } from "react-icons/fa";
 
+const containerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+};
+
+const reducedContainerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.03 } },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const reducedItemVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.2 } },
+};
+
 const EMAIL = "shallyliusiana@gmail.com";
 const LINKEDIN_URL = "https://www.linkedin.com/in/shallyliusiana";
 const GITHUB_URL = "https://github.com/Shal1964";
-const CV_URL = "/src/assets/ShallyLiusiana_Resume.pdf";
-const PORTFOLIO_URL = "/src/assets/Portfolio-ShallyLiusiana.pdf";
+const CV_URL = "/src/assets/ShallyLiusiana_CV.pdf";
+const PORTFOLIO_URL = "/src/assets/ShallyLiusiana_Portfolio.pdf";
 
 const NAV_LINKS = [
   { label: "Home", targetId: "home" },
@@ -58,6 +79,9 @@ function DocLink({ href, label, icon: Icon }: DocLinkProps) {
 
 function Footer() {
   const [copied, setCopied] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const activeContainerVariants = shouldReduceMotion ? reducedContainerVariants : containerVariants;
+  const activeItemVariants = shouldReduceMotion ? reducedItemVariants : itemVariants;
 
   const handleCopyEmail = async () => {
     try {
@@ -85,12 +109,20 @@ function Footer() {
       <FlowerCluster side="left" anchorClassName="top-0" align="start" />
       <FlowerCluster side="right" anchorClassName="top-0" align="start" />
 
-      <div className="px-6 pb-14 pt-8">
+      <motion.div
+        className="px-6 pb-14 pt-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.25 }}
+        variants={activeContainerVariants}
+      >
         <div className="mx-auto flex max-w-4xl flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="min-w-0 flex-1">
-            <h2 className="font-jua text-5xl">Let's Connect</h2>
+            <motion.h2 variants={activeItemVariants} className="font-jua text-5xl">
+              Let's Connect
+            </motion.h2>
 
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <motion.div variants={activeItemVariants} className="mt-6 flex flex-wrap items-center gap-4">
               <span className="text-lg font-semibold">{EMAIL}</span>
 
               <button
@@ -122,23 +154,27 @@ function Footer() {
               >
                 <FaGithub size={28} />
               </a>
-            </div>
+            </motion.div>
 
-            <div className="mt-8 flex flex-col items-start gap-6 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-10">
+            <motion.div
+              variants={activeItemVariants}
+              className="mt-8 flex flex-col items-start gap-6 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-10"
+            >
               <DocLink href={CV_URL} label="View CV" icon={FaRegFileAlt} />
               <DocLink href={PORTFOLIO_URL} label="View Portfolio" icon={FaRegFolderOpen} />
-            </div>
+            </motion.div>
 
-            <p className="mt-6 text-base text-[#4B3621]/80">
+            <motion.p variants={activeItemVariants} className="mt-6 text-base text-[#4B3621]/80">
               Based in Tangerang, Indonesia · Open to internship opportunities
-            </p>
+            </motion.p>
 
             <div className="mt-8 border-t border-[#4B3621]/20 pt-4 sm:hidden">
               <p className="text-sm text-[#4B3621]/70">© 2026 Shally Liusiana</p>
             </div>
           </div>
 
-          <nav
+          <motion.nav
+            variants={activeItemVariants}
             aria-label="Quick navigation"
             className="hidden shrink-0 flex-col gap-3 sm:flex"
           >
@@ -151,13 +187,13 @@ function Footer() {
                 {link.label}
               </a>
             ))}
-          </nav>
+          </motion.nav>
         </div>
 
         <div className="mx-auto mt-8 hidden max-w-4xl border-t border-[#4B3621]/20 pt-4 sm:block">
           <p className="text-sm text-[#4B3621]/70">© 2026 Shally Liusiana</p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
