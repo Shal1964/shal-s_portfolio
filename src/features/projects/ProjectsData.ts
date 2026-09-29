@@ -84,7 +84,7 @@ export const projects: Project[] = [
     techStack: ["Python", "OpenAI API"],
     thumbnail: refashionThumb,
     detail: "/src/assets/projects/refashion-detail.png",
-    githubUrl: "",
+    githubUrl: "https://github.com/Shal1964/ReFashion",
     type: "team",
   },
 ];
