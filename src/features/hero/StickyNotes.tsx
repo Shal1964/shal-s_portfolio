@@ -64,7 +64,7 @@ function StickyNote({label, targetId, colorClass, tapeColor, positionClass, rota
                 viewport={{ once: false, amount: 0.3 }}
                 variants={getEntranceVariants(rotation, entranceIndex, !!shouldReduceMotion)}
                 whileHover={{ scale: 1.05 }}
-                className= {`absolute z-20 ${positionClass} bg-white rounded-xl px-3 py-2 text-xs lg:px-7 lg:py-4 font-jua lg:text-xl ${colorClass} transition-transform`}>
+                className= {`absolute z-20 ${positionClass} bg-white rounded-xl px-4 py-2.5 text-sm sm:px-3 sm:py-2 sm:text-xs lg:px-7 lg:py-4 font-jua lg:text-xl ${colorClass} transition-transform`}>
                 <WashiTape color={tapeColor} rotate={rotation * -1.5} width={36} height={20} className="absolute -top-2 left-1/2 -translate-x-1/2" />
                 {label}
         </motion.button>

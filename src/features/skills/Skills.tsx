@@ -167,7 +167,7 @@ type SkillCategorySectionProps = {
 
 function SkillCategorySection({ title, skills, accent }: SkillCategorySectionProps) {
   return (
-    <div className="w-full pl-10 sm:pl-16">
+    <div className="w-full pl-4 sm:pl-16">
       <h3
         className="mb-2 text-left font-jua text-lg"
         style={{ color: rgbToCss(darken(accent, 0.45)) }}
@@ -204,14 +204,14 @@ function Skills() {
     <motion.section
       ref={sectionRef}
       id="skills"
-      className="relative flex h-screen flex-col justify-center overflow-hidden bg-[#EEF8FF] px-6 py-6"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-[#EEF8FF] px-6 py-10 sm:h-screen sm:py-6"
       style={{ opacity, y }}
     >
       <h2 className="text-center font-jua text-3xl text-[#000097] sm:text-4xl">
         Skills
       </h2>
 
-      <div className="mx-auto mt-6 grid w-full max-w-6xl grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
+      <div className="mx-auto mt-6 grid w-full max-w-6xl grid-cols-1 gap-x-12 gap-y-4 sm:grid-cols-2 sm:gap-y-6">
         {skillCategories.map((category, index) => (
           <div key={category.title} className={category.fullWidth ? "sm:col-span-2" : undefined}>
             <SkillCategorySection

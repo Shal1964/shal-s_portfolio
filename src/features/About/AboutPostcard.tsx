@@ -5,16 +5,22 @@ import WashiTape from "../../components/WashiTape";
 const FOLD_DURATION = 0.65;
 const CONTENT_STAGGER = 0.07;
 
-const panelShadow = "shadow-[0_22px_50px_rgba(0,0,151,0.18)]";
-
 const leftPanelVariants: Variants = {
-  hidden: { rotateY: 80 },
-  visible: { rotateY: 0, transition: { duration: FOLD_DURATION, ease: "easeOut" } },
+  hidden: { rotateY: 80, boxShadow: "0 22px 50px rgba(0,0,151,0.18)" },
+  visible: {
+    rotateY: 0,
+    boxShadow: "0 0px 0px rgba(0,0,151,0)",
+    transition: { duration: FOLD_DURATION, ease: "easeOut" },
+  },
 };
 
 const rightPanelVariants: Variants = {
-  hidden: { rotateY: -80 },
-  visible: { rotateY: 0, transition: { duration: FOLD_DURATION, ease: "easeOut" } },
+  hidden: { rotateY: -80, boxShadow: "0 22px 50px rgba(0,0,151,0.18)" },
+  visible: {
+    rotateY: 0,
+    boxShadow: "0 0px 0px rgba(0,0,151,0)",
+    transition: { duration: FOLD_DURATION, ease: "easeOut" },
+  },
 };
 
 const reducedPanelVariants: Variants = {
@@ -99,7 +105,7 @@ function AboutPostcard() {
       style={{ perspective: 1500 }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25 }}
     >
       <motion.svg
         variants={activeOutsideDetailVariants}
@@ -125,7 +131,7 @@ function AboutPostcard() {
               ? undefined
               : { transformOrigin: "right center", transformStyle: "preserve-3d", backfaceVisibility: "hidden" }
           }
-          className={`pointer-events-none absolute inset-y-0 left-0 z-0 w-1/2 bg-white ${panelShadow}`}
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/2 bg-white"
         />
         <motion.div
           variants={activeRightPanelVariants}
@@ -134,7 +140,7 @@ function AboutPostcard() {
               ? undefined
               : { transformOrigin: "left center", transformStyle: "preserve-3d", backfaceVisibility: "hidden" }
           }
-          className={`pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 bg-white ${panelShadow}`}
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 bg-white"
         />
 
         <motion.div

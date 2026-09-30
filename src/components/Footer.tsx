@@ -135,25 +135,27 @@ function Footer() {
                 {copied ? "Copied!" : "Copy"}
               </button>
 
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-[#4B3621] transition-opacity hover:opacity-70"
-              >
-                <FaLinkedin size={28} />
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-[#4B3621] transition-opacity hover:opacity-70"
+                >
+                  <FaLinkedin size={28} />
+                </a>
 
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="text-[#4B3621] transition-opacity hover:opacity-70"
-              >
-                <FaGithub size={28} />
-              </a>
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-[#4B3621] transition-opacity hover:opacity-70"
+                >
+                  <FaGithub size={28} />
+                </a>
+              </div>
             </motion.div>
 
             <motion.div

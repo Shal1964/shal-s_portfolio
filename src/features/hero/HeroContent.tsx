@@ -66,7 +66,7 @@ function HeroContent() {
       <img
         src={character}
         alt="character illustration"
-        className="absolute z-10 bottom-32 left-1/2 -translate-x-1/2 w-[200px] sm:w-[260px] lg:w-[340px]"
+        className="absolute z-10 bottom-8 left-1/2 -translate-x-1/2 w-[220px] sm:bottom-32 sm:w-[260px] lg:w-[340px]"
       />
     </>
   );
