@@ -127,7 +127,7 @@ export const experienceChapters: ExperienceChapter[] = [
         org: "Indonesia Character Journal, Character Building Development Center (CBDC)",
         dateRange: "2025",
         description: [
-          "Wrote an article titled \"Kesadaran Masyarakat terhadap Dampak dari Fast Fashion (Group)\"",
+          "Wrote an article titled \"Kesadaran Masyarakat terhadap Dampak dari Fast Fashion\" (Group)",
         ],
         icon: FaTrophy,
       },
