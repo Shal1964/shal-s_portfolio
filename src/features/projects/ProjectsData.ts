@@ -74,7 +74,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "dnd-kit"],
     thumbnail: retailThumb,
     detail: retailDetail,
-    githubUrl: "",
+    githubUrl: "https://github.com/silmiz/HonkaiStarRetail",
     roles: ["Admin Features (UI & Functionality)"],
     type: "team",
   },
