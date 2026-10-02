@@ -105,7 +105,7 @@ function AboutPostcard() {
       style={{ perspective: 1500 }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: false, amount: 0.25 }}
     >
       <motion.svg
         variants={activeOutsideDetailVariants}
