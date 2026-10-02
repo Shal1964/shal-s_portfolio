@@ -119,7 +119,7 @@ function Footer() {
         <div className="mx-auto flex max-w-4xl flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="min-w-0 flex-1">
             <motion.h2 variants={activeItemVariants} className="font-jua text-5xl">
-              Let's Connect
+              Let's Connect!
             </motion.h2>
 
             <motion.div variants={activeItemVariants} className="mt-6 flex flex-wrap items-center gap-4">
