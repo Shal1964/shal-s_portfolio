@@ -8,6 +8,8 @@ import retailThumb from "../../assets/projects/retail-thumb.png";
 import refashionThumb from "../../assets/projects/refashion-thumb.png";
 import retailDetail from "../../assets/projects/retail-detail.png";
 import refashionDetail from "../../assets/projects/refashion-detail.png";
+import loomyThumb from "../../assets/projects/loomy-thumb.png";
+import loomyDetail from "../../assets/projects/loomy-detail.png"
 
 export type ProjectType = "solo" | "team";
 
@@ -88,6 +90,18 @@ export const projects: Project[] = [
     thumbnail: refashionThumb,
     detail: refashionDetail,
     githubUrl: "https://github.com/Shal1964/ReFashion",
+    type: "team",
+  },
+   {
+    id: "loomy",
+    title: "Loomy",
+    tagline: "a web-based photobooth application that lets users take photos together in real time inside a shared virtual room via a room code, then freely edit and customize the results",
+    description: "Photobooths are all about shared moments, but that experience is hard to recreate when friends are far apart, and existing options like video calls or manually stitched photos feel disconnected and unspontaneous. LOOMY is a web-based photobooth application built to solve this: users create a virtual room, share a room code, and take photos together in real time, appearing in a single frame with a shared background so the final photo looks as if everyone were in the same place. Afterward, users can freely edit and customize the result and share it, including to Instagram Story. Developed as a group project by a team of five using React JS and Vite for desktop web, my contribution covers the photo editing page and the solo photo flow, including photo capture, upload, and the supporting backend",
+    techStack:  ["React JS", "Livekit", "React-konva"],
+    thumbnail: loomyThumb,
+    detail: loomyDetail,
+    githubUrl: "https://github.com/catherine1265/LOOMI-Web-Photobooth",
+    webUrl : "https://loomi-web-photobooth-jjje.vercel.app",
     type: "team",
   },
 ];
